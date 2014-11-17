@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Milestone Report</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Milestone Report">
+  <meta name="author" content="Nacho Rodriguez">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Milestone Report</h1>
+    <h2>Coursera Data Science Specialization Capstone</h2>
+    <p>Nacho Rodriguez<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Exploratory Analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>(Getting and cleaning)</h1>
+
+<p>First step of the exploratory analysis is getting a sample of each of the sets and cleaning it.
+For this purpose, the following iterative process has been followed:</p>
+
+<ul>
+<li>Reading a bunch of lines from the original file (randomly decide if use it or not, for sampling)</li>
+<li>Tokenizing each line, getting each separate &quot;word&quot;</li>
+<li>Cleaning each &quot;word&quot; using &quot;regular expresions&quot; (numbers, special characters...)</li>
+<li>Unifying lower and upper case</li>
+<li>Reading another bunch of lines (back to Step1)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Exploratory Analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>(Summarizing)</h1>
+
+<p>Once the text is in a tokenized and cleaned format, a N-grams approach is used to summarized the information.</p>
+
+<ul>
+<li>1-grams: Single word appareances are counted</li>
+<li>2-grams: Exact pairs of words are counted</li>
+<li>3-grams: Exact 3-word groups are counted </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>First results</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>Twitter set</h1>
+
+<ul>
+<li>English language Twitter training set has:</li>
+<li>A size of 163Mb</li>
+<li>2,360,148 lines</li>
+<li>30,373,583 words</li>
+<li>The longest line has 213 characters and the shortest one, just 2 characters</li>
+<li>The table is an example of the more common words and their relative frequency</li>
+</ul>
+
+<pre><code>##      word1   rel
+## 3005   the 3.173
+## 3072    to 2.684
+## 1443     i 2.417
+## 8        a 2.062
+## 3484   you 1.837
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h1>Twitter set</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>A quick look to the 1,000 more common words indicates a long tail distribution, so probably, a small subset of the words will be able to represent a big part of the total text</li>
+</ul>
+
+<p><img src="figure/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>First results</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>Blogs set</h1>
+
+<ul>
+<li>English language Twitter training set has:</li>
+<li>A size of 205Mb</li>
+<li>899,299 lines</li>
+<li>37,334,131 words</li>
+<li>The longest line has 40,835 characters and the shortest one, just 1 character</li>
+<li>The table is an example of the more common words and their relative frequency</li>
+</ul>
+
+<pre><code>##      word1   rel
+## 7203   the 5.010
+## 270    and 2.938
+## 7316    to 2.904
+## 16       a 2.440
+## 4900    of 2.343
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h1>Blogs set</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Even if we look at the 10,000 more common words, it indicates a long tail distribution, so probably, a small subset of the words will be able to represent a big part of the total text</li>
+</ul>
+
+<p><img src="figure/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>First results</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>News set</h1>
+
+<ul>
+<li>English language Twitter training set has:</li>
+<li>A size of 201Mb</li>
+<li>1,010,243 lines</li>
+<li>34,372,530 words</li>
+<li>The longest line has 11,384 characters and the shortest one, just 1 character</li>
+<li>The table is an example of the more common words and their relative frequency</li>
+</ul>
+
+<pre><code>##      word1   rel
+## 6965   the 5.904
+## 7076    to 2.751
+## 11       a 2.636
+## 277    and 2.611
+## 4762    of 2.324
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h1>News set</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Again, the news training set has a similar long-tail word distribution</li>
+</ul>
+
+<p><img src="figure/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Next Steps</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Putting together the N-grams analysis from each source</li>
+<li>First predictive approach will just be based on more frequent N-grams</li>
+<li>Example: If &quot;The White House&quot; appears 10 times on the training set and &quot;The White Sox&quot; appears 8 times on the training set, then If the app input is &quot;The white&quot;, the output will be &quot;House&quot; (and not &quot;Sox&quot;)</li>
+<li>Memory occupation and velocity should also be taken into consideration</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Exploratory Analysis'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Exploratory Analysis'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='First results'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Twitter set'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='First results'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Blogs set'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='First results'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='News set'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Next Steps'>
+         9
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
